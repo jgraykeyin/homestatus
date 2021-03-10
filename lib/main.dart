@@ -8,11 +8,8 @@ import 'package:http/http.dart' as http;
 Future<Album> fetchAlbum() async {
   final response =
   await http.get(Uri.https('sandygrayplants.com', 'roomstatus.json'));
-
-  print("Yo!");
-
+  
   if (response.statusCode == 200) {
-    print("eh?");
     // If the server did return a 200 OK response,
     // then parse the JSON.
     return Album.fromJson(jsonDecode(response.body));
